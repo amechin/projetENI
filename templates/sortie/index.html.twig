@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sorties{% endblock %}
+
+{% block body %}
+{#    <section>
+        <div class="container d-flex align-items-center justify-content-center">
+            {{ form(form) }}
+        </div>
+    </section>#}
+   <section id="main">
+        <div class="container-d-flex justify-content-center">
+            <div class="row">
+                {{ form_start(form) }}
+                <div class="errors">
+                    {{ form_errors(form) }}
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">{{ form_row(form.nom) }}</div>
+                    <div class="col-md-6">{{ form_row(form.campus) }}</div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">{{ form_row(form.dateHeureDebut) }}</div>
+                    <div class="col-md-6">{{ form_row(form.lieu) }}</div>
+                </div>
+                <div class="row">
+{#                   <div class="col-md-6 text-left p-0">#}
+{#                        <a href="{{ path('')}}" class="btn btn-outline-dark">Retour</a>#}
+{#                    </div>#}
+                    <div class="col-md-6 text-right p-0">
+                        {{ form_row(form.Valider, {'class': 'btn btn-success'}) }}
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
